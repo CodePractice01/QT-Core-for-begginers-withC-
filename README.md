@@ -1,0 +1,1 @@
+# QT-Core-for-begginers-withC-
