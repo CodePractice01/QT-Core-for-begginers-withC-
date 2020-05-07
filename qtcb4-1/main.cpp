@@ -1,20 +1,17 @@
 #include <QCoreApplication>
-#include <QDebug>
+
+#include<QDebug>
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    //variables - something that will change
-
-    bool isOn =false;
+    bool isOn = false;
 
     qInfo() << "is it on" << isOn;
 
-    isOn = true;
+    isOn= true;
 
-    qInfo() << isOn;
-
-
+    qInfo() << "now isOn is"<< isOn;
     return a.exec();
 }

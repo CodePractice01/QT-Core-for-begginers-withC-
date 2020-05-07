@@ -1,20 +1,20 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
+#include <QCoreApplication>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication a(argc, argv);
 
-    QGuiApplication app(argc, argv);
+    int age = 44; //can change
+    const int id =215; //can not change
 
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-    engine.load(url);
 
-    return app.exec();
+    qInfo()<< "const id" << id;
+
+    qInfo()<< "age 1 " << age;
+    age  = 30;
+    qInfo()<< "age" << age;
+
+
+    return a.exec();
 }
