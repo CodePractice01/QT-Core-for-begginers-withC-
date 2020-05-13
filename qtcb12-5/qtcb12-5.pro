@@ -15,10 +15,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        ../qtcb12-3/car.cpp \
-        ../qtcb12-3/feline.cpp \
-        ../qtcb12-3/racecar.cpp \
         car.cpp \
+        dog.cpp \
         feline.cpp \
         main.cpp \
         racecar.cpp
@@ -29,9 +27,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    ../qtcb12-3/car.h \
-    ../qtcb12-3/feline.h \
-    ../qtcb12-3/racecar.h \
     car.h \
+    dog.h \
     feline.h \
     racecar.h
